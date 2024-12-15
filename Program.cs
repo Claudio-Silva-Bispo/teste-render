@@ -46,6 +46,10 @@ builder.Services.AddTransient<IDiasPreferenciaRepository, DiasPreferenciaReposit
 builder.Services.AddTransient<ITurnoService, TurnoService>();
 builder.Services.AddTransient<ITurnoRepository, TurnoRepository>();
 
+// Horários de preferencia
+builder.Services.AddTransient<IHorariosService, HorariosService>();
+builder.Services.AddTransient<IHorariosRepository, HorariosRepository>();
+
 
 // Configurar autenticação com cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

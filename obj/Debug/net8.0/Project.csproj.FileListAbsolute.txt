@@ -173,3 +173,8 @@
 /Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/appsettings.json
 /Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/Project.deps.json
 /Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/Project.runtimeconfig.json
+/Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/publish/web.config
+/Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/publish/appsettings.Development.json
+/Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/publish/appsettings.json
+/Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/publish/Project.deps.json
+/Users/claudiobispo/Documents/gerenciador-localidade-alocacao/Project/bin/Debug/net8.0/publish/publish/publish/Project.runtimeconfig.json

@@ -1,0 +1,51 @@
+@model IEnumerable<Project.Models.Horarios>
+
+<section class="p-5">
+
+    <h2>horários de preferencia</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>IdUsuario</th>
+                <th>Horário</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var horario in Model)
+            {
+                <tr>
+                    <td>@horario.Id</td>
+                    <td>@horario.IdUsuario</td>
+                    <td>@horario.HorariosPreferencia</td>
+
+                    <td>
+                        <!-- Formulário para excluir diretamente -->
+                       <form method="post" asp-controller="Turno" asp-action="Excluir" asp-route-idDia="@horario.Id" onsubmit="return confirm('Tem certeza que deseja excluir?');">
+                            <button type="submit" class="btn btn-danger" style="width: 100%;">Excluir</button>
+                        </form>
+
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+    <!-- Exibir alerta de sucesso, se houver -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success mt-3">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+    <div class="form-group pt-3">
+        <a asp-controller="Horarios" asp-action="Criar" class="btn btn-warning">Voltar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+        <a asp-controller="Horarios" asp-action="Atualizar" class="btn " style="background-color: aquamarine;">Atualizar</a>
+    </div>
+
+</section>

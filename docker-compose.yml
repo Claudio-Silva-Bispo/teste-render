@@ -4,27 +4,31 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    platform: linux/arm64 
+    platform: linux/arm64
     ports:
       - "8080:5121"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__Oracle=Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oracle.fiap.com.br)(PORT=1521))) (CONNECT_DATA=(SERVER=DEDICATED)(SID=ORCL)));User Id=RM553472;Password=100593;
+      - ConnectionStrings__MongoDb=mongodb:mongodb+srv://csspclaudio:clnzEcsY8xmMVXMr@cluster0.kfgkjua.mongodb.net/
     depends_on:
-      - oracle
+      - mongo
     networks:
-      - oracle-net
+      - mongo-net
 
-  oracle:
-    image: oracleinanutshell/oracle-xe-11g
-    environment:
-      - ORACLE_PWD=oracle
+  mongo:
+    image: mongo:latest
+    container_name: mongo
     ports:
-      - "1521:1521"
-    shm_size: '1g'
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
     networks:
-      - oracle-net
+      - mongo-net
 
 networks:
-  oracle-net:
+  mongo-net:
     driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
